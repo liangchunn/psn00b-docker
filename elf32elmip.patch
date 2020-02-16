@@ -1,0 +1,26 @@
+--- elf32elmip.x	2020-02-16 21:46:50.000000000 +0100
++++ elf32elmip.new.x	2020-02-16 22:03:33.000000000 +0100
+@@ -94,6 +94,23 @@
+     /* .gnu.warning sections are handled specially by elf32.em.  */
+     *(.gnu.warning)
+     *(.mips16.fn.*) *(.mips16.call.*)
++    __CTOR_LIST__ = .;
++    ___CTOR_LIST__ = .;
++    LONG (((__CTOR_END__ - __CTOR_LIST__) / 4) - 2)
++    KEEP (*(SORT (.ctors.*)))
++    KEEP (*(.ctors))
++    LONG (0x00000000)
++    __CTOR_END__ = .;
++    . = ALIGN (0x10);
++
++    __DTOR_LIST__ = .;
++    ___DTOR_LIST__ = .;
++    LONG (((__DTOR_END__ - __DTOR_LIST__) / 4) - 2)
++    KEEP (*(SORT (.dtors.*)))
++    KEEP (*(.dtors))
++    LONG (0x00000000)
++    __DTOR_END__ = .;
++    . = ALIGN (0x10);
+   }
+   .fini           :
+   {
