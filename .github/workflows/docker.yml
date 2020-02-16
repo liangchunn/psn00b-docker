@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build psn00b-docker
-      run: docker built -t psn00b-docker:latest .
+      run: docker build -t psn00b-docker:latest .
