@@ -1,0 +1,11 @@
+name: Docker CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build psn00b-docker
+      run: docker built -t psn00b-docker:latest .
