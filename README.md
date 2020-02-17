@@ -1,4 +1,4 @@
-# psn00b-docker
+# psn00b-docker ![](https://github.com/liangchunn/psn00b-docker/workflows/Docker%20CI/badge.svg)
 
 Docker image for PlayStation 1 (PSX) development based on [psn00bsdk](https://github.com/Lameguy64/PSn00bSDK).
 

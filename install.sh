@@ -1,14 +1,6 @@
 #!/bin/bash
 set -e
 
-# runtime
-INSTALL_RUNTIME_DIR=/install-runtime
-MAKE_THREADS=4
-
-# versions
-GCC_VERSION=7.4.0
-BINUTILS_VERSION=2.31.1
-
 # paths
 ROOT_DIR=/
 GCC_DIR=/gcc
